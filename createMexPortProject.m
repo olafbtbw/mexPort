@@ -62,8 +62,9 @@ try
             fullfile(projDir, [funName '.vcxproj.user']));
         copyfile(fullfile(templateDir, 'MSVC', [templateProjName '.vcxproj.filters']), ...
             fullfile(projDir, [funName '.vcxproj.filters']));
-%         system(sprintf('open %s/%s.xcodeproj', projDir, templateProjName));
        writeMexDefinitionFile(projDir, funName); 
+       
+       system(sprintf('explorer %s', allProjectsDir));
     end
     
     fprintf('\nDone.\n');
