@@ -8,11 +8,17 @@ function createMexPortProject(funName)
 
 
 try
+    
+    if ismac 
+        pathBegin = filesep;
+    else
+        pathBegin = '';
+    end
         
     p = mfilename('fullpath');
     p = regexp(fileparts(p), filesep, 'split');
-    toolDir = fullfile(filesep, p{1:end-1}, 'mexPort_template', filesep);
-    allProjectsDir = fullfile(filesep, p{1:end-1}, 'mexPort_projects', filesep);
+    toolDir = fullfile(pathBegin, p{1:end-1}, 'mexPort_template', filesep);
+    allProjectsDir = fullfile(pathBegin, p{1:end-1}, 'mexPort_projects', filesep);
     clear p;
 
     if nargin < 1
@@ -23,7 +29,7 @@ try
     projDir = [fullfile(allProjectsDir, funName) filesep];
     fprintf('\nCreating new MeXPort project in %s\n\n', projDir);
     
-    assertDirsExist(allProjectsDir);
+    assertDirsExist(allProjectsDir, toolDir);
 
     if (exist(projDir, 'dir'))
         disp('A project with this name already exists. Aborting.');
@@ -51,13 +57,13 @@ try
         fprintf('\nOpening Xcode project.\n')
     else
         copyfile(fullfile(templateDir, 'MSVC', [templateProjName '.vcxproj']), ...
-            fullfile(projDir, [templateProjName '.vcxproj']));
+            fullfile(projDir, [funName '.vcxproj']));
         copyfile(fullfile(templateDir, 'MSVC', [templateProjName '.vcxproj.user']), ...
-            fullfile(projDir, [templateProjName '.vcxproj.user']));
+            fullfile(projDir, [funName '.vcxproj.user']));
         copyfile(fullfile(templateDir, 'MSVC', [templateProjName '.vcxproj.filters']), ...
-            fullfile(projDir, [templateProjName '.vcxproj.filters']));
+            fullfile(projDir, [funName '.vcxproj.filters']));
 %         system(sprintf('open %s/%s.xcodeproj', projDir, templateProjName));
-        
+       writeMexDefinitionFile(projDir, funName); 
     end
     
     fprintf('\nDone.\n');
@@ -96,10 +102,18 @@ fclose(dstId);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function assertDirsExist(allProjectsDir)
+function assertDirsExist(allProjectsDir, toolDir)
 
 if ~exist(allProjectsDir, 'dir')
     mkdir(allProjectsDir);
+end
+if ~exist(fullfile(allProjectsDir, 'AllProjects.sln'), 'file')
+    copyfile(fullfile(toolDir, 'templateFiles', 'AllProjects.sln'), ...
+        fullfile(allProjectsDir, 'AllProjects.sln'));
+end
+if ~exist(fullfile(allProjectsDir, 'utils'), 'dir')
+    copyfile(fullfile(toolDir, 'utils'), ...
+        fullfile(allProjectsDir, 'utils'));
 end
 if ~exist(fullfile(allProjectsDir, 'src'), 'dir')
     mkdir(fullfile(allProjectsDir, 'src'));
@@ -110,3 +124,10 @@ end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+function writeMexDefinitionFile(p, funName)
+    fid = fopen(fullfile(p, 'mexFunction.def'), 'wt');
+    fwrite(fid, sprintf(['LIBRARY "' funName '\n']));
+    fwrite(fid, sprintf('EXPORTS\n'));
+    fwrite(fid, sprintf('\tmexFunction\n'));
+    fclose(fid);

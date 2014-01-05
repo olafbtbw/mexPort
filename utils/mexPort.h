@@ -16,7 +16,11 @@ using std::is_pointer;
 using std::remove_pointer;
 using std::is_arithmetic;
 #else // C++03
+#ifdef _WIN32
+#include <type_traits>
+#else
 #include <tr1/type_traits>
+#endif
 using std::tr1::is_pointer;
 using std::tr1::remove_pointer;
 using std::tr1::is_arithmetic;
