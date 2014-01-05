@@ -1,0 +1,355 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5B03BD3F165E781900FB26CD /* cppEntry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B03BD3E165E781800FB26CD /* cppEntry.cpp */; };
+		5BB9E92F1860F33400EE9367 /* mexPort.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BB9E92C1860F33400EE9367 /* mexPort.h */; };
+		5BB9E9301860F33400EE9367 /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5BB9E92D1860F33400EE9367 /* utils.cpp */; };
+		5BB9E9311860F33400EE9367 /* utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BB9E92E1860F33400EE9367 /* utils.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5B03BD3E165E781800FB26CD /* cppEntry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cppEntry.cpp; sourceTree = "<group>"; };
+		5B08D834165E465700016F0E /* cppEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cppEntry.h; sourceTree = SOURCE_ROOT; };
+		5BB9E92C1860F33400EE9367 /* mexPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mexPort.h; path = ../../mexPort_template/utils/mexPort.h; sourceTree = SOURCE_ROOT; };
+		5BB9E92D1860F33400EE9367 /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = utils.cpp; path = ../../mexPort_template/utils/utils.cpp; sourceTree = SOURCE_ROOT; };
+		5BB9E92E1860F33400EE9367 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = utils.h; path = ../../mexPort_template/utils/utils.h; sourceTree = SOURCE_ROOT; };
+		5BF47A0C165C12C700BF5561 /* mexPortTemplate.mexmaci64 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = mexPortTemplate.mexmaci64; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5BF47A09165C12C700BF5561 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5B08D82F165E42A100016F0E /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				5BB9E92C1860F33400EE9367 /* mexPort.h */,
+				5BB9E92D1860F33400EE9367 /* utils.cpp */,
+				5BB9E92E1860F33400EE9367 /* utils.h */,
+			);
+			name = utils;
+			path = ../../MeXCode/utils;
+			sourceTree = "<group>";
+		};
+		5BF47A01165C12C700BF5561 = {
+			isa = PBXGroup;
+			children = (
+				5B03BD3E165E781800FB26CD /* cppEntry.cpp */,
+				5B08D834165E465700016F0E /* cppEntry.h */,
+				5B08D82F165E42A100016F0E /* utils */,
+				5BF47A0D165C12C700BF5561 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5BF47A0D165C12C700BF5561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5BF47A0C165C12C700BF5561 /* mexPortTemplate.mexmaci64 */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5BF47A0A165C12C700BF5561 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BB9E92F1860F33400EE9367 /* mexPort.h in Headers */,
+				5BB9E9311860F33400EE9367 /* utils.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5BF47A0B165C12C700BF5561 /* mexPortTemplate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BF47A10165C12C700BF5561 /* Build configuration list for PBXNativeTarget "mexPortTemplate" */;
+			buildPhases = (
+				5BF47A08165C12C700BF5561 /* Sources */,
+				5BF47A09165C12C700BF5561 /* Frameworks */,
+				5BF47A0A165C12C700BF5561 /* Headers */,
+				5BF47A1F165C471E00BF5561 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mexPortTemplate;
+			productName = readConfig;
+			productReference = 5BF47A0C165C12C700BF5561 /* mexPortTemplate.mexmaci64 */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5BF47A03165C12C700BF5561 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = sonicemotion;
+			};
+			buildConfigurationList = 5BF47A06165C12C700BF5561 /* Build configuration list for PBXProject "mexPortTemplate" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5BF47A01165C12C700BF5561;
+			productRefGroup = 5BF47A0D165C12C700BF5561 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5BF47A0B165C12C700BF5561 /* mexPortTemplate */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5BF47A1F165C471E00BF5561 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp ${CONFIGURATION_BUILD_DIR}/${PRODUCT_NAME}_${CONFIGURATION}.mexmaci64 ${PROJECT_DIR}/../Matlab/";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5BF47A08165C12C700BF5561 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B03BD3F165E781900FB26CD /* cppEntry.cpp in Sources */,
+				5BB9E9301860F33400EE9367 /* utils.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5BF47A0E165C12C700BF5561 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		5BF47A0F165C12C700BF5561 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		5BF47A11165C12C700BF5561 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_VARIANTS = $CONFIGURATION;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_CXX0X_EXTENSIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = NO;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_EXTENSION = mexmaci64;
+				EXECUTABLE_PREFIX = "";
+				GCC_C_LANGUAGE_STANDARD = gnu89;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_NONCONFORMANT_CODE_ERRORS_AS_WARNINGS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_EFFECTIVE_CPLUSPLUS_VIOLATIONS = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_PEDANTIC = YES;
+				GCC_WARN_PROTOTYPE_CONVERSION = NO;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GENERATE_MASTER_OBJECT_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"${MEXCODE_MATLABPATH}/extern/include",
+					../src,
+					../../MeXCode/utils,
+				);
+				LIBRARY_SEARCH_PATHS = "${MEXCODE_MATLABPATH}/bin/maci64";
+				MACH_O_TYPE = mh_bundle;
+				OTHER_LDFLAGS = (
+					"-lmat",
+					"-lmx",
+					"-lmex",
+				);
+				PRODUCT_NAME = "${TARGET_NAME}";
+				WARNING_CFLAGS = "-Wall";
+			};
+			name = Debug;
+		};
+		5BF47A12165C12C700BF5561 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_VARIANTS = $CONFIGURATION;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_CXX0X_EXTENSIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = NO;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_EXTENSION = mexmaci64;
+				EXECUTABLE_PREFIX = "";
+				GCC_C_LANGUAGE_STANDARD = gnu89;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "NDEBUG=1";
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_NONCONFORMANT_CODE_ERRORS_AS_WARNINGS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_EFFECTIVE_CPLUSPLUS_VIOLATIONS = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_PEDANTIC = YES;
+				GCC_WARN_PROTOTYPE_CONVERSION = NO;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GENERATE_MASTER_OBJECT_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"${MEXCODE_MATLABPATH}/extern/include",
+					../src,
+					../../MeXCode/utils,
+				);
+				LIBRARY_SEARCH_PATHS = "${MEXCODE_MATLABPATH}/bin/maci64";
+				MACH_O_TYPE = mh_bundle;
+				OTHER_LDFLAGS = (
+					"-lmat",
+					"-lmx",
+					"-lmex",
+				);
+				PRODUCT_NAME = "${TARGET_NAME}";
+				WARNING_CFLAGS = "-Wall";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5BF47A06165C12C700BF5561 /* Build configuration list for PBXProject "mexPortTemplate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BF47A0E165C12C700BF5561 /* Debug */,
+				5BF47A0F165C12C700BF5561 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BF47A10165C12C700BF5561 /* Build configuration list for PBXNativeTarget "mexPortTemplate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BF47A11165C12C700BF5561 /* Debug */,
+				5BF47A12165C12C700BF5561 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5BF47A03165C12C700BF5561 /* Project object */;
+}

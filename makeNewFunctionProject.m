@@ -33,8 +33,9 @@ try
     
     fprintf('\nCreating project %s%s\n', solDir, projName);
 
-    makeOutputDirAndMFiles('Debug', funName, retValues, parameters, solDir);
-    makeOutputDirAndMFiles('Release', funName, retValues, parameters, solDir);
+    makeOutputDir([solDir 'Debug']);
+    makeOutputDir([solDir 'Release']);
+    makeOutputDir([solDir 'Matlab']);
 
     templateProjName = 'MyMatlabFunctionNameCpp';
     oldFunName = templateProjName;
@@ -63,15 +64,11 @@ end
 
 fprintf('\nFinished.\n')
 
-function makeOutputDirAndMFiles(config, funName, retValues, parameters, solDir)
+function makeOutputDir(theDir)
 
-if ~exist([solDir config], 'dir')
-    mkdir([solDir config]);
+if ~exist(theDir, 'dir')
+    mkdir(theDir);
 end
-
-fid = fopen([solDir config filesep funName config '.m'], 'wt');
-fwrite(fid, sprintf('function %s%s%s%s\n', retValues, funName, config, parameters));
-fclose(fid);
 
 function substituteAndCopyFile(src, dst, funName, oldFunName)
 
