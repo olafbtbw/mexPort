@@ -408,7 +408,7 @@ template <> struct MxToCCppArray<true, false> {
 };
 
 template <typename Cont>
-void mxToCCppArray(const mxArray* mxArr, Cont* nativeArray, size_t** dims,
+void mxToCCppArray(const mxArray* mxArr, Cont* nativeArray, size_t**,
                    const size_t offset, const size_t stepSz) {
     MxToCCppArray<
     is_arithmetic<typename remove_pointer<Cont>::type>::value,
@@ -486,7 +486,7 @@ template <> struct FreeNDimArray<false> {
 ////////////////////////////////////////////////////////////////////////////////
 
 template <typename Cont>
-bool checkDimMatching(Cont* cont, const mxArray* mxArr)
+bool checkDimMatching(Cont*, const mxArray* mxArr)
 {
     size_t nDimsMx = mxGetNumberOfDimensions(mxArr);
     size_t nDimsCpp = numberOfDims<Cont>();

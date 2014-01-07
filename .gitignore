@@ -1,0 +1,14 @@
+*.m~
+.DS_Store
+*.pbxtree
+*.mexmaci64
+*.LSOverride
+*.mode1v3
+*.pbxuser
+*.xcsettings
+*.xcuserstate
+*xcuser*
+*.plist 
+*.xcscheme
+*.xcbkptlist
+*.xcuserdatad

@@ -16,9 +16,9 @@
 /* Begin PBXFileReference section */
 		5B03BD3E165E781800FB26CD /* cppEntry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cppEntry.cpp; sourceTree = "<group>"; };
 		5B08D834165E465700016F0E /* cppEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cppEntry.h; sourceTree = SOURCE_ROOT; };
-		5BB9E92C1860F33400EE9367 /* mexPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mexPort.h; path = ../../mexPort_template/utils/mexPort.h; sourceTree = SOURCE_ROOT; };
-		5BB9E92D1860F33400EE9367 /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = utils.cpp; path = ../../mexPort_template/utils/utils.cpp; sourceTree = SOURCE_ROOT; };
-		5BB9E92E1860F33400EE9367 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = utils.h; path = ../../mexPort_template/utils/utils.h; sourceTree = SOURCE_ROOT; };
+		5BB9E92C1860F33400EE9367 /* mexPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mexPort.h; path = ../utils/mexPort.h; sourceTree = SOURCE_ROOT; };
+		5BB9E92D1860F33400EE9367 /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = utils.cpp; path = ../utils/utils.cpp; sourceTree = SOURCE_ROOT; };
+		5BB9E92E1860F33400EE9367 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = utils.h; path = ../utils/utils.h; sourceTree = SOURCE_ROOT; };
 		5BF47A0C165C12C700BF5561 /* mexPortTemplate.mexmaci64 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = mexPortTemplate.mexmaci64; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -247,11 +247,10 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GENERATE_MASTER_OBJECT_FILE = YES;
 				HEADER_SEARCH_PATHS = (
-					"${MEXCODE_MATLABPATH}/extern/include",
+					"${MEXPORT_MATLABPATH}/extern/include",
 					../src,
-					../../MeXCode/utils,
 				);
-				LIBRARY_SEARCH_PATHS = "${MEXCODE_MATLABPATH}/bin/maci64";
+				LIBRARY_SEARCH_PATHS = "${MEXPORT_MATLABPATH}/bin/maci64";
 				MACH_O_TYPE = mh_bundle;
 				OTHER_LDFLAGS = (
 					"-lmat",
@@ -312,11 +311,10 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GENERATE_MASTER_OBJECT_FILE = YES;
 				HEADER_SEARCH_PATHS = (
-					"${MEXCODE_MATLABPATH}/extern/include",
+					"${MEXPORT_MATLABPATH}/extern/include",
 					../src,
-					../../MeXCode/utils,
 				);
-				LIBRARY_SEARCH_PATHS = "${MEXCODE_MATLABPATH}/bin/maci64";
+				LIBRARY_SEARCH_PATHS = "${MEXPORT_MATLABPATH}/bin/maci64";
 				MACH_O_TYPE = mh_bundle;
 				OTHER_LDFLAGS = (
 					"-lmat",

@@ -108,16 +108,20 @@ function assertDirsExist(allProjectsDir, toolDir)
 if ~exist(allProjectsDir, 'dir')
     mkdir(allProjectsDir);
 end
-if ~exist(fullfile(allProjectsDir, 'AllProjects.sln'), 'file')
-    copyfile(fullfile(toolDir, 'templateFiles', 'AllProjects.sln'), ...
-        fullfile(allProjectsDir, 'AllProjects.sln'));
+if ~ismac
+    if ~exist(fullfile(allProjectsDir, 'AllProjects.sln'), 'file')
+        copyfile(fullfile(toolDir, 'templateFiles', 'AllProjects.sln'), ...
+            fullfile(allProjectsDir, 'AllProjects.sln'));
+    end
 end
 if ~exist(fullfile(allProjectsDir, 'utils'), 'dir')
-    copyfile(fullfile(toolDir, 'utils'), ...
-        fullfile(allProjectsDir, 'utils'));
-end
-if ~exist(fullfile(allProjectsDir, 'src'), 'dir')
-    mkdir(fullfile(allProjectsDir, 'src'));
+    mkdir(fullfile(allProjectsDir, 'utils'));
+    copyfile(fullfile(toolDir, 'utils', 'mexPort_template.h'), ...
+        fullfile(allProjectsDir, 'utils', 'mexPort.h'));
+    copyfile(fullfile(toolDir, 'utils', 'utils_template.h'), ...
+        fullfile(allProjectsDir, 'utils', 'utils.h'));
+    copyfile(fullfile(toolDir, 'utils', 'utils_template.cpp'), ...
+        fullfile(allProjectsDir, 'utils', 'utils.cpp'));
 end
 if ~exist(fullfile(allProjectsDir, 'Matlab'), 'dir')
     mkdir(fullfile(allProjectsDir, 'Matlab'));
