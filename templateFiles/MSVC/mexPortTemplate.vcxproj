@@ -50,7 +50,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <TargetName>$(ProjectName)$(Configuration)</TargetName>
+    <TargetName>$(ProjectName)_$(Configuration)</TargetName>
     <TargetExt>.mexw32</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -73,11 +73,11 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(MATLAB_MEXPORTPATH)\extern\lib\win32\microsoft</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>.\mexFunction.def</ModuleDefinitionFile>
-      <OutputFile>$(OutDir)$(ProjectName)$(Configuration)$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)$(ProjectName)_$(Configuration)$(TargetExt)</OutputFile>
       <AdditionalDependencies>libmx.lib;libmex.lib;libmat.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y "$(OutDir)$(ProjectName)$(Configuration)$(TargetExt)" "$(SolutionDir)Matlab\$(ProjectName)$(Configuration)$(TargetExt)"</Command>
+      <Command>copy /Y "$(OutDir)$(ProjectName)_$(Configuration)$(TargetExt)" "$(SolutionDir)Matlab\$(ProjectName)_$(Configuration)$(TargetExt)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
