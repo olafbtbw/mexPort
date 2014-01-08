@@ -37,28 +37,28 @@ namespace MexPort {
 
 // import/export of std::string:
 template<typename StringType>
-void portStringFromMex(const mxArray* mxArr, StringType* retString);
+void importStringFromMex(const mxArray* mxArr, StringType* retString);
 template<typename StringType>
-void portStringToMex(const StringType& str, mxArray** mxArr);
+void exportStringToMex(const StringType& str, mxArray** mxArr);
 
 // scalar values of any type:
 template <typename T>
-T portFromMex(const mxArray* mxArr);
+T importFromMex(const mxArray* mxArr);
 template <typename T>
-void portToMex(const T* nativeArray, mxArray** mxArr);
+void exportToMex(const T* nativeArray, mxArray** mxArr);
 
 // std::vector data
 template <typename Cont>
-void portFromMex(const mxArray* mxArr, Cont* nativeArray);
+void importFromMex(const mxArray* mxArr, Cont* nativeArray);
 template <typename T>
-void portToMex(const std::vector<T>& nativeArray, mxArray** mxArr,
+void exportToMex(const std::vector<T>& nativeArray, mxArray** mxArr,
                     mxComplexity complexity = mxREAL, bool isColumnVector=false);
 
 // C arrays
 template <typename Cont>
-void portFromMex(const mxArray* mxArr, Cont* nativeArray, size_t**);
+void importFromMex(const mxArray* mxArr, Cont* nativeArray, size_t**);
 template <typename T>
-void portToMex(const T* nativeArray, const size_t* dimSizes, mxArray** mxArr,
+void exportToMex(const T* nativeArray, const size_t* dimSizes, mxArray** mxArr,
                     mxComplexity complexity = mxREAL, bool isColumnVector=false);
 
 // a helper to free multi-dimensional array memory
@@ -97,7 +97,7 @@ void cCppArrayToMx(const T* nativeArray, const size_t* dimSizes, mxArray** mxArr
 ////////////////////////////////////////////////////////////////////////////////
 
 template <typename T>
-void portToMex(const std::vector<T>& nativeArray, mxArray** mxArr, mxComplexity complexity, bool isColumnVector)
+void exportToMex(const std::vector<T>& nativeArray, mxArray** mxArr, mxComplexity complexity, bool isColumnVector)
 {
     const size_t nDims = numberOfDims<std::vector<T> >();
     if (1 == nDims) {
@@ -122,7 +122,7 @@ void portToMex(const std::vector<T>& nativeArray, mxArray** mxArr, mxComplexity 
 ////////////////////////////////////////////////////////////////////////////////
 
 template <typename T>
-void portToMex(const T* nativeArray, const size_t* dimSizes, mxArray** mxArr, mxComplexity complexity, bool isColumnVector)
+void exportToMex(const T* nativeArray, const size_t* dimSizes, mxArray** mxArr, mxComplexity complexity, bool isColumnVector)
 {
     const size_t nDims = numberOfDims<T*>();
     if (1 == nDims) {
@@ -148,7 +148,7 @@ void portToMex(const T* nativeArray, const size_t* dimSizes, mxArray** mxArr, mx
 ////////////////////////////////////////////////////////////////////////////////
 
 template <typename T>
-void portToMex(const T val, mxArray** mxArr)
+void exportToMex(const T val, mxArray** mxArr)
 {
     *mxArr = mxCreateDoubleScalar(static_cast<T>(val));
 }
@@ -248,7 +248,7 @@ template <> struct MxToCCppArray<false, true>;
 
 // STL data types
 template <typename Cont>
-void portFromMex(const mxArray* mxArr, Cont* nativeArray)
+void importFromMex(const mxArray* mxArr, Cont* nativeArray)
 {
     if (checkDimMatching(nativeArray, mxArr)) {
 
@@ -265,7 +265,7 @@ void portFromMex(const mxArray* mxArr, Cont* nativeArray)
 
 // C data types
 template <typename Cont>
-void portFromMex(const mxArray* mxArr, Cont* nativeArray, size_t** dims)
+void importFromMex(const mxArray* mxArr, Cont* nativeArray, size_t** dims)
 {
     if (checkDimMatching(nativeArray, mxArr)) {
         mxArray* mxArrTransposed(0);
@@ -299,7 +299,7 @@ void portFromMex(const mxArray* mxArr, Cont* nativeArray, size_t** dims)
 
 // scalar values
 template <typename T>
-T portFromMex(const mxArray* mxArr)
+T importFromMex(const mxArray* mxArr)
 {
     if (2 == mxGetNumberOfDimensions(mxArr) && 1 == mxGetN(mxArr) &&
             1 == mxGetM(mxArr) && !mxIsComplex(mxArr)) {

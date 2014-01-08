@@ -33,14 +33,14 @@ void mexFunction(int nlhs, mxArray* plhs[], int nrhs, const mxArray* prhs[])
         // Examples
         // C++
 //        std::vector<std::vector<float> > in1;// a 2-D Matlab array
-//        portFromMex(prhs[0], &in1);
-//        int a = portFromMex<int>(prhs[1]);
+//        importFromMex(prhs[0], &in1);
+//        int a = importFromMex<int>(prhs[1]);
 //        std::string cppStr;
 //        portStringFromMex(prhs[2], &cppStr);
 
         // C
 //        float*** in2(0); size_t* sizeIn2(0U); // a 3-D Matlab array
-//        portFromMex(prhs[3], &in2, &sizeIn2);
+//        importFromMex(prhs[3], &in2, &sizeIn2);
 
         // ## 3 ## declare output variables
 //        std::vector<float> res1;
@@ -50,8 +50,8 @@ void mexFunction(int nlhs, mxArray* plhs[], int nrhs, const mxArray* prhs[])
 
         // ## 5 ## safety net: insert number of Matlab return values here and return data
         if (0 == nlhs) {
-//            portToMex(res1, &plhs[0]); // C++
-//            portToMex(res2, sizeRes2, &plhs[1]); // C
+//            exportToMex(res1, &plhs[0]); // C++
+//            exportToMex(res2, sizeRes2, &plhs[1]); // C
         }
         else {
             mexWarnMsgTxt("Wrong number of output parameters. Aborting.");

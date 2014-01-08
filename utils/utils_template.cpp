@@ -33,7 +33,7 @@ void printAuxInfo()
 void plot(const float* x, const size_t len)
 {
     mxArray* ptMexArray;
-    portToMex(x, &len, &ptMexArray);
+    exportToMex(x, &len, &ptMexArray);
     mexCallMATLAB(0, 0, 1, &ptMexArray, "plot");
     mxDestroyArray(ptMexArray);
 }
@@ -43,11 +43,11 @@ void matlabFFT(const float* in, const size_t szIn, const size_t fftLen, float** 
 {
     mxArray* ptMexArrayIn[2];
     mxArray* ptMexArrayOut;
-    portToMex(in, &szIn, &(ptMexArrayIn[0]));
+    exportToMex(in, &szIn, &(ptMexArrayIn[0]));
     ptMexArrayIn[1] = mxCreateDoubleScalar(fftLen);
     mexCallMATLAB(1, &ptMexArrayOut, 2, ptMexArrayIn, "fft");
     size_t* szOut;
-    portFromMex(ptMexArrayOut, out, &szOut);
+    importFromMex(ptMexArrayOut, out, &szOut);
     mxDestroyArray(ptMexArrayOut);
     delete szOut;
 }
@@ -56,10 +56,10 @@ void matlabIFFT(const float* in, size_t szIn, float** out)
 {
     mxArray* ptMexArrayIn;
     mxArray* ptMexArrayOut;
-    portToMex(in, &szIn, &ptMexArrayIn);
+    exportToMex(in, &szIn, &ptMexArrayIn);
     mexCallMATLAB(1, &ptMexArrayOut, 1, &ptMexArrayIn, "ifft");
     size_t* szOut;
-    portFromMex(ptMexArrayOut, out, &szOut);
+    importFromMex(ptMexArrayOut, out, &szOut);
     mxDestroyArray(ptMexArrayOut);
     delete szOut;
 }
