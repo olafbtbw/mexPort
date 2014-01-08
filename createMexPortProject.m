@@ -17,7 +17,7 @@ try
         
     p = mfilename('fullpath');
     p = regexp(fileparts(p), filesep, 'split');
-    toolDir = fullfile(pathBegin, p{1:end-1}, 'mexPort_template', filesep);
+    toolDir = fullfile(pathBegin, p{:}, filesep);
     allProjectsDir = fullfile(pathBegin, p{1:end-1}, 'mexPort_projects', filesep);
     clear p;
 
